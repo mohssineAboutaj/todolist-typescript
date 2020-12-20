@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todolist - purejs</title>
+    <link rel="stylesheet" href="./style.scss" />
+  </head>
+  <body>
+    <div class="container flex lists">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-tasks"></i>
+          <span>todo list</span>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="form-input">
+              <input
+                type="text"
+                id="input_task"
+                name="input"
+                placeholder="New task"
+                required
+                autofocus
+              />
+            </div>
+            <div class="flex">
+              <button type="button" class="btn-radius add" id="add_button">
+                <span>add new</span>
+                <i class="fa fa-plus"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="card-body">
+          <ul id="task_list"></ul>
+        </div>
+        <div class="card-footer">
+          <div class="flex">
+            <button type="button" class="btn-radius clear" id="empty_completed">
+              <span>empty completed</span>
+              <i class="fas fa-broom"></i>
+            </button>
+            <button type="button" class="btn-radius delete" id="empty_list">
+              <span>empty list</span>
+              <i class="fa fa-broom"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.ts"></script>
+  </body>
+</html>

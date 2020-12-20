@@ -1,0 +1,196 @@
+// import fonts
+@import url("https://fonts.googleapis.com/css2?family=Langar&family=Roboto&display=swap");
+
+// variables
+/// colors
+$primary: #8c14fc;
+$secondary: #3a539b;
+$dark: #272727;
+$light: #eaeaea;
+$danger: #f03434;
+$warn: #f1828d;
+$success: #26c281;
+/// fonts
+$primary-font: "Roboto", sans-serif;
+$secondary-font: "Langar", cursive;
+
+// placeholder classes
+%d-flex {
+  display: flex;
+}
+%trans-50 {
+  transition: all 0.5s ease-in-out;
+}
+%d-block {
+  display: block;
+  width: 100%;
+}
+
+// global style
+body {
+  color: $dark;
+  background-color: $primary;
+  @extend %d-block;
+  margin: 0;
+  font-family: $secondary-font;
+}
+
+form {
+  .form-input {
+    @extend %d-block;
+    input {
+      width: calc(100% - (15px * 2));
+      font-size: 1.1em;
+      padding: 10px 15px;
+      margin: 10px auto;
+      border: none;
+      border-bottom: 1px solid transparent;
+      color: $dark;
+      background-color: $light;
+      &:focus {
+        outline: none;
+        border-bottom: 1px solid $primary;
+      }
+    }
+  }
+}
+
+button,
+input {
+  font-size: 1.1em;
+  padding: 5px 10px;
+  margin: 2px;
+  font-family: $primary-font;
+}
+
+button {
+  color: $light;
+  @extend %trans-50;
+  &:focus {
+    outline: none;
+  }
+}
+
+ul {
+  padding: 0;
+  font-family: $secondary-font;
+  li {
+    list-style: none;
+    padding: 5px;
+    @extend %d-flex;
+    align-items: baseline;
+    &.complete {
+      color: $success;
+      span {
+        text-decoration: line-through;
+      }
+    }
+    span {
+      width: 460px;
+      margin-right: 10px;
+      padding: 6px 11px;
+      &:focus {
+        outline: none;
+        border: 1px solid slategrey;
+        border-radius: 5px;
+        padding: 5px 10px;
+      }
+    }
+  }
+}
+
+.btn-radius {
+  border-radius: 25px;
+}
+
+[type="checkbox"] {
+  margin: 0 10px 0 0;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  margin-top: 5em;
+}
+
+.flex {
+  @extend %d-flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card {
+  @extend %d-block;
+  max-width: 450px;
+  background-color: $light;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  .card-header {
+    border-bottom: 1px solid $primary;
+    color: $primary;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-transform: capitalize;
+    font-family: $primary-font;
+    @extend %d-flex;
+    align-items: center;
+    span {
+      margin: 0 10px;
+      font-size: 2em;
+    }
+  }
+  .card-body {
+    margin: 10px auto;
+  }
+  .card-footer {
+    margin-top: 30px;
+  }
+}
+
+%btn {
+  border: 1px solid transparent;
+  border-radius: 25px;
+  text-transform: capitalize;
+  cursor: pointer;
+  @extend %trans-50;
+}
+
+.add {
+  @extend %btn;
+  background-color: $secondary;
+  &:hover {
+    border-color: $secondary;
+    background-color: transparent;
+    color: $secondary;
+  }
+}
+
+.delete {
+  @extend %btn;
+  background-color: $danger;
+  &:hover {
+    background-color: transparent;
+    color: $danger;
+  }
+}
+
+.clear {
+  @extend %btn;
+  background-color: $warn;
+  &:hover {
+    border-color: $warn;
+    background-color: transparent;
+    color: $warn;
+  }
+}
+
+.edit {
+  @extend %btn;
+  background-color: $success;
+  &:hover {
+    border-color: $success;
+    background-color: transparent;
+    color: $success;
+  }
+}
